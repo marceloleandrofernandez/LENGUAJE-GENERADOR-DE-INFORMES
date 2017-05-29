@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{138BAC62-A0B7-4E78-8B0E-1BEFBB26FC8B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Estructuras_de_Datos.Pruebas43</StartupObject>
+    <StartupObject>Estructuras_de_Datos.Ejercicio4_4</StartupObject>
     <RootNamespace>Estructuras_de_Datos</RootNamespace>
     <AssemblyName>Estructuras_de_Datos</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -69,6 +69,7 @@
     <Compile Include="Ejercicio4_1.vb" />
     <Compile Include="Ejercicio4_2.vb" />
     <Compile Include="Ejercicio4_3.vb" />
+    <Compile Include="Ejercicio4_4.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
