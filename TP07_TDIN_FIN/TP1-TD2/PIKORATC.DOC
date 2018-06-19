@@ -1,0 +1,284 @@
+
+
+
+                             - PIKORATC V 2.1 á -
+
+                  - DRIVER DE RATON PARA LENGUAJE RM-COBOL/85 -
+
+                                                                      Û    Û
+    ÛÛÛÛÛ   Û                                                        ÛÛÛ   Û
+    Û - Û O Û                                                       Û Û Û Û
+    Û   ÛÛÛÛÛ                                                      Û  Û  ÛÛÛ
+                      A N O T H E R   R E L E A S E   B Y         Û   Û   Û ÛÛ
+    ÛÛÛÛ                                                         Û    Û    Û  Û
+   Û         Û                                                  ÛÛÛÛÛÛÛ     Û
+  Û         Û    ²²²²  ²  ²  ²  ²²²²  ²²²²  ²²²²  ²²²²  ²²²²²    Û    Û    Û
+   Û ÛÛ    Û    °²°°² °² °² ²² °²°°² °²°°  °²°°² °²°°  °°°²°      Û   Û   Û
+    Û     Û     °²²²² °² °²²²  °² °² °²²²² °² °² °²²²    °²        Û Û   Û
+     Û   Û      °²°°  °² °²°²² °² °² °°°°² °² °² °²°     °²         Û   Û
+      Û Û       °²    °² °² °² °²²²²  ²²²² °²²²² °²      °²          Û Û
+       Û        °     °  °  °  °°°°  °°°°  °°°°  °       °            Û
+
+
+              - F U C K I N '  V I R T U A L  S O F T W A R E -
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+     CONTENIDOS:
+                       1.- INTRODUCCION
+
+                       2.- REGISTRO
+
+                       3.- HISTORIAL DE VERSIONES
+
+                       4.- INSTRUCCIONES
+
+                       5.- AGRADECIMIENTOS
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+     1.- INTRODUCCION
+
+         NOVIEMBRE,1994.
+
+          Por fin,y tras un largo proceso de investigaci¢n (tantas noches      
+    sin dormir),consegu¡ comprender el proceso necesario para el intercambio       
+    de parametros entre un programa en RM-COBOL y otro en ensamblador. 
+
+     Como todos sabemos,el RM-COBOL tiene numerosas carencias (unas minimas
+    facilidades a la hora de crear pantallas,por poner algun ejemplo),
+    carencias que podr¡an ser en parte paliadas mediante alguna peque¤a 
+    rutina en ensamblador,aprovechando sus infinitas posibilidades.Y en eso
+    comenc‚ a trabajar...
+
+     Pero incluso en eso el RM-COBOL resulta muy poco flexible y c¢modo.Para 
+    realizar un paso de parametros entre un programa COBOL y uno ensamblador 
+    hay que realizar un sinfin de accesos a diferentes direcciones de memoria
+    y complicados c lculos para convertir estas direcciones a algo manejable
+    por el ensamblador.Pero bueno,no pretendo escribir un manual sobre el 
+    tema.El caso es que lo consegu¡,y mi siguiente movimiento fue resolver 
+    una de las mas importantes carencias del RM-COBOL : la gesti¢n del rat¢n. 
+    (Es inconcebible que un lenguaje de programaci¢n deje de lado un 
+    perif‚rico tan importante y tan extendido como el rat¢n.
+
+     Y aqui lo teneis.Un gestor de rat¢n para utilizarlo en vuestros programas
+    COBOL.Es una primera version beta,y como tal me extra¤ar¡a que estuviera
+    completamente libre de errores.En caso de que encontreis algun bug o si
+    teneis alguna sugerencia o consulta que hacer,podeis poneros en contacto 
+    conmigo en :
+    
+                       E-Mail: piko@mundivia.es   
+                       
+    o en la siguiente direcci¢n postal:
+
+                      JOSE ALBERTO MATEOS
+                      C/PERINES N§39 2§ IZQ.
+                      CP:39007
+                      SANTANDER (KANTABRIA)
+
+     
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+     2.- REGISTRO
+
+        Este programa es de Dominio Publico,por lo que no es necesario 
+     registrarse en caso de uso propio.Si por alguna causa (vender un 
+     programa,etc..) necesitas que no aparezcan las dos protecciones
+     (cambio de nombre,b£squeda de PIKORATC.DOC),ponte en contacto conmigo
+     en la direccion de arriba y nos pondremos de acuerdo.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+     3.- HISTORIAL DE VERSIONES
+
+
+
+         V 1.0:
+
+        Primera version llena de bugs.Prefiero no recordarla.
+
+         V 1.1á:
+        
+        La verdad es que no he realizado cambios muy significativos,pero
+     algo hemos implementado esta versi¢n menor.La antigua versi¢n 1.0 ten¡a
+     un peque¤o problema de velocidad,ya que en cada llamada reinicializaba
+     el driver de rat¢n,lo cual toma entre 4 y 5 segundos.Dentro de
+     un programa COBOL un poco largo,con unos cuantos menus,hay que realizar
+     muchas llamadas a PIKORATC,con lo cual este retraso se de segundos se
+     hac¡a muy notable.En esta versi¢n el driver se inicializa solo la 
+     primera vez que el programa es llamado dentro de un mismo programa,con 
+     el consiguiente aumento de velocidad.Para conseguir esto utilizo 16 bytes
+     de memoria.No creo que esto provoque ning£n problema de memoria,pero si
+     es as¡ os pido que me lo comuniqueis.
+         
+         Adem s,ahora el programa comprueba que en el mismo directorio est 
+     este fichero,el PIKORATC.DOC,de tal forma que si no se encuentra, el 
+     programa no funciona.Intento evitar que paseis este programa sin su 
+     documentaci¢n,la cual considero importante. 
+
+
+         V 2.0á
+
+        En esta versi¢n he solucionado un problema del que me hab¡an 
+     informado.Se trataba de que el programa no permit¡a ser utilizado en
+     un directorio de tercer nivel o superior.Ahora ya lo permite (a menos
+     que le pidais que trabaje en un subdirectorio de nivel 10 o as¡,lo cual
+     me parece un poquito rebuscado).
+
+        Adem s,atendiendo a ciertas peticiones,he ampliado el n£mero de 
+     teclas que el programa admite.Ahora acepta todas excepto CTRL,ALT y 
+     SHIFT,as¡ como las combinaciones de teclas,que se transmiten como si no
+     lo fueran (es decir,es lo mismo pulsar F1 que ALT+F1,por ejemplo).Por
+     esta ampliaci¢n he tenido que cambiar los codigos,que ahora son los 
+     mismos que utiliza el controlador de teclado,es decir,el codigo de Scan.
+     Estos c¢digos los podeis encontrar en cualquier buen libro de ensamblador
+     pero por si acaso os doy un esquema en el siguiente apartado.
+
+         Por £ltimo,he solucionado un problema importante del que no me hab¡a
+     dado "cuen":al hacer llamadas sucesivas,mientras tu pulsabas una tecla 
+     de forma normal, el programa cobol pod¡a hacer 15 o 20 llamadas a  
+     PIKORATC,con lo cual se obtenian 15 o 20 resultados iguales consecutivos,
+     pero ya est  solucionado...de nada.
+
+         V 2.1á
+
+        Hab¡a algunas peticiones acerca de la necesidad de distinguir tambi‚n
+     entre la pulsaci¢n de los diferentes botones del rat¢n.As¡ que 
+     utilizamos otra variable m s y ya tenemos esta informaci¢n.Mas en las
+     instrucciones.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+     4.- INSTRUCCIONES
+
+
+   
+     PIKORATC es un programa muy sencillo de usar.Lo unico que hay que hacer
+   es a¤adir en el programa RM-COBOL la siguiente linea:   
+   
+            CALL "PIKORATC" USING F, C, RES, BOT.
+
+   en el momento en el que necesites la entrada del rat¢n.La definici¢n
+   de los parametros se realiza en la WORKING-STORAGE SECTION de la 
+   siguiente manera:
+
+        77 F PIC 99 BINARY.
+        77 C PIC 99 BINARY.
+        77 RES PIC 99 BINARY.
+        77 BOT PIC 9 BINARY.
+
+
+     El programa llama al driver de rat¢n y espera la pulsaci¢n del 
+   bot¢n izquierdo.En ese momento desactiva el rat¢n y devuelve en 
+   F la fila y en C la columna en la que estaba el rat¢n en el momento 
+   de la pulsaci¢n.Entonces no hay mas que comprobar si los valores de F
+   y C est n dentro de los l¡mites que nosotros consideremos v lidos para
+   aceptar esa opci¢n. 
+   
+     La pulsaci¢n de los botones del rat¢n se distringue mediante la variable
+   BOT.En ella se devuelve 1 si se ha pulsado el bot¢n derecho,2 si es el
+   izquierdo y 4 si es el del centro. Si la entrada se ha producido mediante
+   teclado,en BOT habr  un 9. 
+
+                                   Ü Ü Ü Ü Ü Ü Ü
+                                   Ü
+                          ÚÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄ¿
+                          ³     ³     ³     ³
+                          ³  1  ³  4  ³  2  ³    
+                          ÃÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄ´
+                          ³                 ³
+                          ³    Valores de   ³
+                          ³                 ³    
+                          ³       BOT       ³
+                          ³                 ³
+                          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+     Todav¡a no he explicado el significado de RES.Si el equipo en el que se
+   ejecuta el programa en COBOL no tiene rat¢n, o simplemente se prefiere
+   utilizar el teclado en lugar del rat¢n,RES devuelve el c¢digo de la tecla
+   pulsada,atendiendo al criterio siguiente:
+
+ ============================================================================
+ =       C¢digos de rastreo del teclado est ndar/expandido de IBM (HEX.)    =
+ =                                                                          =    
+ =  ÚÄÄ¿ ÚÄÄÂÄÄÂÄÄÂÄÄ¿ ÚÄÄÂÄÄÂÄÄÂÄÄ¿ ÚÄÄÂÄÄÂÄÄÂÄÄ¿ ÚÄÄÂÄÄÂÄÄ¿ ÚÄÄÄÂÄÄÄÂÄÄÄ¿ =    
+ =  ³01³ ³3B³3C³3D³3E³ ³3F³40³41³42³ ³43³44³57³58³ ³XX³46³XX³ ³ þ ³ þ ³ þ ³ =    
+ =  ÀÄÄÙ ÀÄÄÁÄÄÁÄÄÁÄÄÙ ÀÄÄÁÄÄÁÄÄÁÄÄÙ ÀÄÄÁÄÄÁÄÄÁÄÄÙ ÀÄÄÁÄÄÁÄÄÙ ÀÄÄÄÁÄÄÄÁÄÄÄÙ =    
+ =  ÚÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÂÄÄÄÄÄ¿ ÚÄÄÂÄÄÂÄÄ¿ ÚÄÄÂÄÄÂÄÄÂÄÄ¿ =    
+ =  ³29³02³03³04³05³06³07³08³09³0A³0B³0C³0D³ 0E  ³ ³XX³XX³XX³ ³45³XX³37³4A³ =    
+ =  ÃÄÄÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÄÄÄ´ ÃÄÄÅÄÄÅÄÄ´ ÃÄÄÅÄÄÅÄÄÅÄÄ´ =    
+ =  ³ 0F ³10³11³12³13³14³15³16³17³18³19³1A³1B³ 1C³ ³XX³XX³XX³ ³47³48³49³  ³ =    
+ =  ÃÄÄÄÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁÂÄÁ¿  ³ ÀÄÄÁÄÄÁÄÄÙ ÃÄÄÅÄÄÅÄÄ´4E³ =    
+ =  ³ 3A  ³1E³1F³20³21³22³23³24³25³26³27³28³2B³  ³            ³4B³4C³4D³  ³ =    
+ =  ÃÄÄÄÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÂÁÄÄÁÄÄ´    ÚÄÄ¿    ÃÄÄÅÄÄÅÄÄÅÄÄ´ =    
+ =  ³ 2A ³56³2C³2D³2E³2F³30³31³32³33³34³35³  36  ³    ³XX³    ³4F³50³51³  ³ =    
+ =  ÃÄÄÄÄÁÂÄÁÂÄÁÄÂÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÂÁÄÄÁÂÄÂÄÄÄ´ ÚÄÄÅÄÄÅÄÄ¿ ÃÄÄÁÄÄÅÄÄ´XX³ =    
+ =  ³ 1D  ³  ³ 38³         39         ³ XX ³ ³ XX³ ³XX³XX³XX³ ³  52 ³53³  ³ =    
+ =  ÀÄÄÄÄÄÙ  ÀÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÙ ÀÄÄÄÙ ÀÄÄÁÄÄÁÄÄÙ ÀÄÄÄÄÄÁÄÄÁÄÄÙ =    
+ =                                                                          =    
+ =                                                                          =    
+ =            Las teclas expandidas (XX) generan los mismos c¢digos         =    
+ =          que sus correspondientes no expandidas.                         =
+ =                                                                          =
+ =   ************* LOS DATOS ESTAN EXPRESADOS EN HEXADECIMAL ************   =
+ ============================================================================
+
+
+       En un principio PIKORATC estaba orientado principalmente a la 
+   gesti¢n de menus,de tal forma que el paso de un menu a otro se puede  
+   realizar mediante rat¢n, teclas num‚ricas y teclas de funci¢n,pero tras 
+   ciertas "propuestas",acept‚ aumentar su campo de acci¢n al aceptar todas 
+   las teclas,lo cual,como no tiene sus inconvenientes.Por ejemplo,tras la 
+   pulsaci¢n de una tecla cualquiera,debemos comprobar si esa tecla nos 
+   interesa,y si no es as¡ debemos volver a llamar al programa.Si,ya,eso 
+   tambien pod¡a pasar antes,pero en menor medida.Todo tiene sus pros y sus
+   contras...
+
+        PIKORATC devuelve a 99 el valor del periferico no utilizado;es decir,       
+   si la entrada se ha producido mediante rat¢n,RES contendr  99.Si es al 
+   rev‚s,F y C contendr n 99,y BOT 9.Sencillo.     
+        
+
+     Bueno, creo mas o menos est  todo explicado.S¢lo un par de cosas:
+
+         1.- PIKORATC est  protegido contra cambio de nombre.Es decir,no
+     intenteis cambiar el nombre del programa,ya que en la primera llamada
+     desde un programa en COBOL el programa se autorenombrar  tomando de
+     nuevo su nombre original,y despu‚s saldr  al DOS incondicionalmente.
+     Adem s,en el mismo directorio debe estar el fichero PIKORATC.DOC,pues 
+     si no el programa no funcionar .
+
+         2.- Un detalle t‚cnico. PIKORATC,asi como cualquier programa 
+     dise¤ado para interactuar con un programa en COBOL,debe retornar al
+     programa que le llama mediante un RET.Esto provocar¡a que una llamada 
+     desde el DOS llevar¡a inevitablemente al cuelgue del sistema.Sin embargo,
+     PIKORATC detecta si la llamada ha sido desde un programa en COBOL o
+     desde el DOS,evitando el posible cuelgue del sistema.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+     5.- AGRADECIMIENTOS
+
+        Quiero dedicar este programa a toda mi promoci¢n de CEINMARK,en               
+     especial a MAKOKI,VAX,JULIO,SALAS,LITTLE VALLEY (aunque no se lo merece),   
+     OSCAR,PRATCH y sus chonucos,AYALA...(lo siento si me olvido de alguno),
+     y a todos los que van de listillos y no tienen ni idea (a ver si alguien
+     se da por aludido).
+
+        Tambi‚n quiero dedicarselo a GONZALO,JONAS,ALBERTO,LUIS,DOLORES Y
+     MARI FE (GRACIAS).
+
+        Va tambi‚n para los dos que me informaron del error de la versi¢n
+     precedente,y que me hicieron las sugerencias que han conducido a esta
+     versi¢n (lo siento,no se vuestros nombres).Espero que cunda el ejemplo.
+     
+
+                                                  FIN.
+
+
+      P.D. -> No hab¡a escrito tanto EN MI VIDA...
+
+
