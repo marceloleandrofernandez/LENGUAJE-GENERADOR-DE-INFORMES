@@ -1,0 +1,45 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              INFORME POR CLIENTES                    12/09/17
+
+CODIGO      APELLIDO Y NOMBRES          DEBE          HABER          TELEFONO
+-------     ------------------          ----          -----          --------
+00000001     JUANCHO                    3000          0000          3333333334
+00000002     RAMONA                     0000          2000          0044444445
+00000003     ASDFG                      1000          0000          0022222223
+00000004     QQQQQQ                     1000          0000          3343434435
+00000005     EQWEQEQWE                  0000          1000          5454545455
+
+
+                       TOTALES =        5.000       3.000
+     EL MAYOR DEBE ES = 3000
+     CORRESPONDE AL CLIENTE = JUANCHO
+     SU IMPORTE ES = 3000
+     SU TELEFONO ES = 3333333334
+     EL MENOR HABER ES = 1000
+     CORRESPONDE AL CLIENTE = EQWEQEQWE
+     SU IMPORTE ES = 1000
+     SU TELEFONO ES = 5454545455
+
